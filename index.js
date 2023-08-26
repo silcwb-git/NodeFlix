@@ -1,6 +1,7 @@
 const Joi = require('joi');
 const express = require('express');
 
+// Build a web server
 const app = express();
 app.use(express.json());
 
@@ -64,5 +65,6 @@ function ValidateGenre(genre) {
     return Joi.validate(genre), schema;
 }
 
+// Reading the port from an environment variable 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
