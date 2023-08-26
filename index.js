@@ -8,7 +8,8 @@ const genres = [
     { id: 1, name: 'Science Fiction' },
     { id: 2, name: 'Comedy' },
     { id: 3, name: 'Romance' },
-    { id: 4, name: 'Action' }
+    { id: 4, name: 'Action' },
+    { id: 5, name: 'Drama'}
 ]
 
 app.get('/api/genres', (req, res) => {
