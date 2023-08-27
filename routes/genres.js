@@ -6,7 +6,7 @@ const genres = [
     { id: 2, name: 'Comedy' },
     { id: 3, name: 'Romance' },
     { id: 4, name: 'Action' },
-    { id: 5, name: 'Drama'}
+    { id: 5, name: 'Todo Drama'}
 ]
 
 // using route handler functions (req, res) => {}
