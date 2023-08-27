@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
     res.send(genre);
 });
 
-router.post('/:id', (req, res) => {
+router.post('/', (req, res) => {
     const { error } = ValidateGenre(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
