@@ -1,18 +1,23 @@
 {
-  "name": "vidly",
+  "name": "nodeflix",
   "version": "1.0.0",
-  "description": "",
+  "description": "imaginnary servvices for renting out movies.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silcwb-git/NodeFlix.git"
+  },
+  "keywords": [
+    "NodeFlix",
+    "NodeJS"
+  ],
+  "author": "Silvana Siqueira",
   "license": "ISC",
-  "dependencies": {
-    "config": "^3.3.9",
-    "debug": "^4.3.4",
-    "express": "^4.18.2",
-    "joi": "^17.9.2"
-  }
+  "bugs": {
+    "url": "https://github.com/silcwb-git/NodeFlix/issues"
+  },
+  "homepage": "https://github.com/silcwb-git/NodeFlix#readme"
 }
