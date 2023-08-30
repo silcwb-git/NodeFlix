@@ -1,28 +1,19 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/genres')
-    .then(() => console.log('Connected to MongoDB...'))
-    .catch(err => console.error('Could not connect to MongoDB...', err.message));
-
-    const genreSchema = new mongoose.Schema({
-        name: String
-    });
-
-    async function createGenre() {
-        const Genre = mongoose.model('Genre', genreSchema);
-        const genre = new Genre({
-            name: 'Action',
-        });
-        const result = await course.save();
-        console.log(result);
+const Genre = mongoose.model('Genre', new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        minLenght: 5,
+        maxLengh: 50
     }
-
-
+}));
 
 // using route handler functions (req, res) => {}
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const genres = await Genre.find();
     res.send(genres);
 });
 
@@ -51,7 +42,7 @@ router.put('/:id', (req, res) => {
     if (!genre) return res.status(404).send('The genre with the given ID was not found');
 
     const { error } = ValidateGenre(req.body);
-    if(error) return res.status(400).send(error.details[0].message);
+    if (error) return res.status(400).send(error.details[0].message);
 
     genre.name = req.body.name;
     res.send(genre);
