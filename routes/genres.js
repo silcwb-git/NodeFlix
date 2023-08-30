@@ -1,13 +1,25 @@
 const express = require('express');
 const router = express.Router();
 
-const genres = [
-    { id: 1, name: 'Science Fiction' },
-    { id: 2, name: 'Comedy' },
-    { id: 3, name: 'Romance' },
-    { id: 4, name: 'Action' },
-    { id: 5, name: 'Todo Drama'}
-]
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/genres')
+    .then(() => console.log('Connected to MongoDB...'))
+    .catch(err => console.error('Could not connect to MongoDB...', err.message));
+
+    const genreSchema = new mongoose.Schema({
+        name: String
+    });
+
+    async function createGenre() {
+        const Genre = mongoose.model('Genre', genreSchema);
+        const genre = new Genre({
+            name: 'Action',
+        });
+        const result = await course.save();
+        console.log(result);
+    }
+
+
 
 // using route handler functions (req, res) => {}
 router.get('/', (req, res) => {
