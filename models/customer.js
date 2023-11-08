@@ -5,7 +5,7 @@ const Customer = mongoose.model('Customer', new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        minLenght: 5,
+        minLengh: 5,
         maxLengh: 50
     },
     isGold: {
