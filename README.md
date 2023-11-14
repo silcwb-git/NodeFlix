@@ -1,5 +1,5 @@
 # NodeFlix
-👋 Howdy!
+👋 Hi There!
 
 - The imaginnary Services for renting out movies in NodeJS.
 
